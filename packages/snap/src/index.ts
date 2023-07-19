@@ -12,6 +12,7 @@ import {
 } from '../../../scripts/types';
 import { messages } from './messages';
 import SnapMap from './SnapMap';
+import init from '../annoy/pkg/annoy_rs.js';
 
 /**
  * Handle an AI request from the snap.
@@ -107,6 +108,9 @@ export const onRpcRequest: OnRpcRequestHandler = async ({
 }) => {
   let approved;
   let config;
+
+  const module = await init();
+  console.log("AnnoyIndexJs", module.AnnoyIndexJs);
 
   switch (request.method) {
     case 'clear_embeddings':

@@ -1,0 +1,3 @@
+[submodule "packages/snap/annoy"]
+	path = packages/snap/annoy
+	url = https://github.com/hanabi1224/RuAnnoy.git
